@@ -4,28 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-
+import java.text.DecimalFormat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Second_Activity extends AppCompatActivity {
+    DecimalFormat df = new DecimalFormat("#0.00");
 
-    TextView displayA, displayB, resultText;
-    Button btnAdd, btnSubtract, btnMultiply, btnDivide,btnBack;
+    TextView  resultText;
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        displayA = findViewById(R.id.displayA);
-        displayB = findViewById(R.id.displayB);
         resultText = findViewById(R.id.result);
-
-        btnAdd = findViewById(R.id.btnAdd);
-        btnSubtract = findViewById(R.id.btnSubtract);
-        btnMultiply = findViewById(R.id.btnMultiply);
-        btnDivide = findViewById(R.id.btnDivide);
         btnBack =findViewById(R.id.btnBack);
 
         //Nhan Intent, lay bundle khoi intent
@@ -35,34 +29,18 @@ public class Second_Activity extends AppCompatActivity {
             // Lấy dữ liệu từ Bundle
             int a = bundle.getInt("numA",0);
             int b = bundle.getInt("numB",0);
+            int c = bundle.getInt("numC",0);
+        int delta = b*b - 4*a*c;
+            if (delta < 0) {
+                resultText.setText("Vô nghiệm" );
+            } else if (delta == 0) {
+                resultText.setText("x1 = x2 = " + (-b / (2.0 * a)));
+            } else {
+                double x1 = (-b + Math.sqrt(delta)) / (2.0 * a);
+                double x2 = (-b - Math.sqrt(delta)) / (2.0 * a);
+                resultText.setText("x1 = " + df.format(x1) + "\n" + "x2 = " + df.format(x2));
+            }
 
-            // Gán giá trị vào displayA và displayB
-            displayA.setText(getString(R.string.number_a, a));  // Sử dụng tài nguyên string
-            displayB.setText(getString(R.string.number_b, b));  // Sử dụng tài nguyên string
-
-            btnAdd.setOnClickListener(v -> {
-                double result = a + b;
-                resultText.setText(getString(R.string.result, result));  // Sử dụng tài nguyên string
-            });
-
-            btnSubtract.setOnClickListener(v -> {
-                double result = a - b;
-                resultText.setText(getString(R.string.result, result));  // Sử dụng tài nguyên string
-            });
-
-            btnMultiply.setOnClickListener(v -> {
-                double result = a * b;
-                resultText.setText(getString(R.string.result, result));  // Sử dụng tài nguyên string
-            });
-
-            btnDivide.setOnClickListener(v -> {
-                if (b != 0) {
-                    double result = (double) a / b;
-                    resultText.setText(getString(R.string.result, result));  // Sử dụng tài nguyên string
-                } else {
-                    resultText.setText(R.string.cannot_divide_by_zero);  // Sử dụng tài nguyên string cho thông báo lỗi
-                }
-            });
         }
 
         btnBack.setOnClickListener(v -> {

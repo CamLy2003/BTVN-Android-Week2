@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText numA, numB;
+    EditText numA, numB, numC;
     Button  submitButton, btnClear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         numA = findViewById(R.id.numA);
         numB = findViewById(R.id.numB);
+        numC = findViewById(R.id.numC);
+
         submitButton = findViewById(R.id.submitButton);
         btnClear = findViewById(R.id.btnClear);
 
@@ -30,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 //lấy du lieu
                 int a = Integer.parseInt(numA.getText().toString());
                 int b = Integer.parseInt(numB.getText().toString());
+                int c = Integer.parseInt(numC.getText().toString());
 
                 //dong goi du lieu
                 Bundle bundle = new Bundle();
                 bundle.putInt("numA", a);
                 bundle.putInt("numB", b);
+                bundle.putInt("numC", c);
+
                 //dua du lieu vao intent
                 intent.putExtra("package",bundle);
                 //khoi dong
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 numA.setText("");
                 numB.setText("");
+                numC.setText("");
 
             }
         });

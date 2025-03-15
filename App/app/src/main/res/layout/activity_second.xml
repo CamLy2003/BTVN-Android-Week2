@@ -6,81 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".Second_Activity">
 
-    <!-- Hiển thị giá trị A và B -->
     <TextView
-        android:id="@+id/displayA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number A: "
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/displayB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number B: "
-        android:textSize="20sp" />
-
-    <!-- TableLayout với các phép toán -->
-    <TableLayout
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:stretchColumns="1">
+        android:text="Giai phuong trinh bac 2"
+        android:background="@color/blue"
+        android:textColor="@color/black"
 
-        <!-- Hàng 1 với 2 nút phép toán -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btnAdd"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="+"
-                android:textSize="20sp"/>
-            <Button
-                android:id="@+id/btnSubtract"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="-"
-                android:textSize="20sp"/>
-        </TableRow>
-
-        <!-- Hàng 2 với 2 nút phép toán -->
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btnMultiply"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="*"
-                android:textSize="20sp"/>
-            <Button
-                android:id="@+id/btnDivide"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="/"
-                android:textSize="20sp"/>
-        </TableRow>
-
-
-
-    </TableLayout>
+        android:layout_gravity="center"
+        android:textSize="35sp"/>
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:textColor="@color/black"
+        android:text="      x^2 + bx + c = 0"
+        android:layout_gravity="center"
+        android:textSize="35sp"/>
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Result: "
-        android:textSize="25sp"
+        android:textSize="45sp"
         android:layout_marginTop="30dp" />
 
     <Button
@@ -88,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-        android:textSize="25sp"
+        android:textSize="45sp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
 
