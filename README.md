@@ -18,10 +18,14 @@ Cách hoạt động:
 Giao diện ứng dụng
 
 🔹 MainActivity - Nhập hệ số phương trình
+
 ![image](https://github.com/user-attachments/assets/b51f9695-9aa0-4ea5-b3e5-4ccb013db62e)
 
+
 🔹 Second_Activity - Hiển thị kết quả
+
 ![image](https://github.com/user-attachments/assets/9d90c125-e096-4423-84b8-91f6f63354af)
+
 
 Cấu trúc code chính:
 
