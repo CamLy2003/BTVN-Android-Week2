@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="number_a">Number A: %1$d</string>
+    <string name="number_b">Number B: %1$d</string>
+    <string name="result">Result: %1$.2f</string>
+    <string name="cannot_divide_by_zero">Cannot divide by zero</string>
+    <string name="bundle_error">Error: Bundle is null</string>
+</resources>
